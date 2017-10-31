@@ -26,6 +26,28 @@ public class Lab10 {
 		}
 
 		System.out.println(first + " * " + second + " = " + (first*second));
+		
+		int fibSum = fibonacci();
+		
+		System.out.println(fibSum);
+	}
+
+	private static int fibonacci() {
+		int prev = 0;
+		int curr = 1;
+		int temp = 0;
+		int total = 0;
+		
+		while(curr < 2000000000) {
+			if((curr % 2) == 1)
+				total += curr;
+			
+			temp = curr;
+			curr += prev;
+			prev = temp;
+		}
+
+		return total;
 	}
 
 	public static boolean isaPalindrome(String input) {
